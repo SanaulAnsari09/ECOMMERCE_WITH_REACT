@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.PScontainer {
+  padding: 30px 40px;
+  row-gap: 40px;
+  overflow-x: hidden;
+}
+
+.PScontainer h1 {
+  font-size: 50px;
+  padding: 20px 0;
+  /* color: rgb(91, 91, 91); */
+  color: blueviolet;
+}
+
+.PScontainer .product {
+  height: 310px;
+  width: 200px;
+  box-sizing: border-box;
+  border: 1px solid rgb(223, 245, 255);
+  border-radius: 10px;
+}
+
+.PScontainer .product .cardImg {
+  height: 65%;
+  width: 100%;
+  padding: 10px 20px;
+}
+
+.PScontainer .product .cardImg img {
+  height: 100%;
+  width: 100%;
+  border-radius: 10px;
+}
+
+.PScontainer .product .cardDetail {
+  height: 35%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 10px 0px;
+}
+
+.PScontainer .product .cardDetail .sapce_camera {
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  justify-content: start;
+  padding: 0 20px;
+  align-items: start;
+}
+
+.PScontainer .product .cardDetail .mobileInfo {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  padding: 0 20px;
+  font-size: 18px;
+}
+.PScontainer .product .cardDetail .buttons {
+  padding: 0 20px;
+}
+.PScontainer .product .cardDetail .buttons a {
+  color: blue;
+  text-decoration: none;
+}
+
+/* slider css */
+
+@media screen and (max-width: 610px) {
+  .PScontainer h1 {
+    font-size: 30px;
+  }
+
+  .PScontainer {
+    padding: 30px 10px;
+  }
+}
+
+@media screen and (max-width: 429px) {
+  .PScontainer h1 {
+    font-size: 25px;
+  }
+}
