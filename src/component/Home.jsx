@@ -1,54 +1,7 @@
 import React, { useEffect } from "react";
 import "./Home.css";
-import CardHeroComp from "./CardHeroComp";
-import ProductScroller from "./ProductScroller";
-import WatchScroller from "./WatchScroller";
-import { useLocation } from "react-router-dom";
-
-//mobiles---------------------------------------------------------------
-
-let mobile =
-  "https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/u/n/p/-original-imagugptgsfbxauz.jpeg?q=70";
-let mobile1 =
-  "https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/w/x/0/-original-imagszg3qxqgdx9c.jpeg?q=70";
-let mobile2 =
-  "https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/t/s/y/narzo-60-5g-rmx3750-realme-original-imagrht2yzyc2jyj.jpeg?q=70";
-let mobile3 =
-  "https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/2/z/4/-original-imagqxx2haehpjnf.jpeg?q=70";
-
-// wathces---------------------------------------------------------------
-let watch = "https://m.media-amazon.com/images/I/61t7DyFfewL._SX679_.jpg";
-let watch1 = "https://m.media-amazon.com/images/I/61WQsMHoQhL._SX679_.jpg";
-let watch2 = "https://m.media-amazon.com/images/I/61akt30bJsL._SX679_.jpg";
-let watch3 = "https://m.media-amazon.com/images/I/61ZrPtiuqSL._SX679_.jpg";
-
-// laptops ---------------------------------------------------------------
-
-let laptops = "https://m.media-amazon.com/images/I/71lVVb3ImyL._SX679_.jpg";
-let laptops1 = "https://m.media-amazon.com/images/I/813-FmU7N1L._SX679_.jpg";
-let laptops2 = "https://m.media-amazon.com/images/I/61cgS33eaRL._SX679_.jpg";
-let laptops3 = "https://m.media-amazon.com/images/I/51gkDWHPvQL._SX679_.jpg";
-
-// books -------------------------------------------------------------------
-
-let jeans = "https://m.media-amazon.com/images/I/61T7wpZA6VL._SX679_.jpg";
-let jeans1 = "https://m.media-amazon.com/images/I/71P5qOkag+L._SY879_.jpg";
-let jeans2 = "https://m.media-amazon.com/images/I/61SRj3IzD1L._SY879_.jpg";
-let jeans3 = "https://m.media-amazon.com/images/I/61aXQfoUv+L._SY879_.jpg";
-
-// camera-------------------------------------------------------------------
-
-let boots = "https://m.media-amazon.com/images/I/61+-S5UnFzL._SY695_.jpg";
-let boots1 = "https://m.media-amazon.com/images/I/71H7I-T+g8L._SY695_.jpg";
-let boots2 = "https://m.media-amazon.com/images/I/71csCqLdKyL._SY695_.jpg";
-let boots3 = "https://m.media-amazon.com/images/I/71c135VjaVL._SY695_.jpg";
-
-// tshirt's ---------------------------------------------------------------
-
-let tshirt = "https://m.media-amazon.com/images/I/71O1QaI-sbL._SY879_.jpg";
-let tshirt1 = "https://m.media-amazon.com/images/I/815WjQKfE7L._SY879_.jpg";
-let tshirt2 = "https://m.media-amazon.com/images/I/81aN1dXJ+CL._SY879_.jpg";
-let tshirt3 = "https://m.media-amazon.com/images/I/81JUb2j7IXL._SY879_.jpg";
+import { NavLink, useLocation } from "react-router-dom";
+import { TrendingProduct, productList } from "./Data";
 
 const Home = ({ location, setLocation }) => {
   const locationVal = useLocation();
@@ -60,105 +13,313 @@ const Home = ({ location, setLocation }) => {
 
   return (
     <>
-      <section className="heroSection">
-        <div className="imageArea">
-          <img src="header1.jpg" alt="image" />
+      {/* Carousel */}
+      <div className="container-fluid mt-2">
+        <div className="row">
+          <div className="col">
+            <div id="carouselExampleIndicators" class="carousel slide">
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#carouselExampleIndicators"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item">
+                  <img
+                    src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/1aaeb0a6531bef88.jpg?q=20"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item">
+                  <img
+                    src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/bf42fbdd3d37c8c3.jpg?q=20"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+                <div class="carousel-item active">
+                  <img
+                    src="https://rukminim2.flixcart.com/fk-p-flap/1600/270/image/78e89d02375d5222.jpg?q=20"
+                    class="d-block w-100"
+                    alt="..."
+                  />
+                </div>
+              </div>
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+              </button>
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+              </button>
+            </div>
+          </div>
         </div>
-        <div className="textArea">
-          <h1>Summer is comming</h1>
-          <h1 className="offer">Upto 80% OFF</h1>
-          <p>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum modi
-            non facilis quasi, id officiis repellendus.
-          </p>
-          <button>
-            Shop Now | <i className="fa-solid fa-bag-shopping"></i>
-          </button>
+      </div>
+      {/* /Carousel */}
+
+      {/* Category */}
+      <div className="container-fluid mt-2">
+        <div className="row my-4 justify-content-center r-gap-30">
+          <h3>Categories</h3>
+          <div className="col-6 col-lg-2 col-sm-4 d-flex justify-content-center image-scale">
+            <NavLink to="/accessories">
+              <div
+                class="card d-flex justify-content-center align-items-center"
+                style={{ height: "180px", width: "150px" }}
+              >
+                <img
+                  src="https://rukminim2.flixcart.com/image/832/832/xif0q/mobile/u/n/p/-original-imagugptgsfbxauz.jpeg?q=70"
+                  className="card-img-top"
+                  alt="mobile"
+                  style={{ height: "140px", width: "110px" }}
+                />
+              </div>
+            </NavLink>
+          </div>
+          <div className="col-6 col-lg-2 col-sm-4 d-flex justify-content-center image-scale">
+            <NavLink to="/accessories">
+              <div
+                class="card d-flex justify-content-center align-items-center "
+                style={{ height: "180px", width: "150px" }}
+              >
+                <img
+                  src="https://m.media-amazon.com/images/I/61t7DyFfewL._SX679_.jpg"
+                  className="card-img-top"
+                  alt="mobile"
+                  style={{ height: "140px", width: "110px" }}
+                />
+              </div>
+            </NavLink>
+          </div>
+          <div className="col-6 col-lg-2 col-sm-4 d-flex justify-content-center">
+            <NavLink to="/accessories">
+              <div
+                class="card d-flex justify-content-center align-items-center image-scale"
+                style={{ height: "180px", width: "150px" }}
+              >
+                <img
+                  src="https://m.media-amazon.com/images/I/71lVVb3ImyL._SX679_.jpg"
+                  className="card-img-top"
+                  alt="mobile"
+                  style={{ height: "140px", width: "110px" }}
+                />
+              </div>
+            </NavLink>
+          </div>
+          <div className="col-6 col-lg-2 col-sm-4 d-flex justify-content-center">
+            <NavLink to="/fashion">
+              <div
+                class="card d-flex justify-content-center align-items-center image-scale"
+                style={{ height: "180px", width: "150px" }}
+              >
+                <img
+                  src="https://m.media-amazon.com/images/I/61T7wpZA6VL._SX679_.jpg"
+                  className="card-img-top"
+                  alt="mobile"
+                  style={{ height: "140px", width: "110px" }}
+                />
+              </div>
+            </NavLink>
+          </div>
+          <div className="col-6 col-lg-2 col-sm-4 d-flex justify-content-center">
+            <NavLink to="/fashion">
+              <div
+                class="card d-flex justify-content-center align-items-center image-scale"
+                style={{ height: "180px", width: "150px" }}
+              >
+                <img
+                  src="https://m.media-amazon.com/images/I/61+-S5UnFzL._SY695_.jpg"
+                  className="card-img-top"
+                  alt="mobile"
+                  style={{ height: "140px", width: "110px" }}
+                />
+              </div>
+            </NavLink>
+          </div>
+          <div className="col-6 col-lg-2 col-sm-4 d-flex justify-content-center">
+            <NavLink to="/fashion">
+              <div
+                class="card d-flex justify-content-center align-items-center image-scale"
+                style={{ height: "180px", width: "150px" }}
+              >
+                <img
+                  src="https://m.media-amazon.com/images/I/71O1QaI-sbL._SY879_.jpg"
+                  className="card-img-top"
+                  alt="mobile"
+                  style={{ height: "140px", width: "110px" }}
+                />
+              </div>
+            </NavLink>
+          </div>
         </div>
-      </section>
-      {/* <HeroCarousel/> */}
+      </div>
+      {/* Category */}
 
-      <section className="cardHero">
-        <CardHeroComp
-          accessories1={mobile}
-          accessories2={mobile1}
-          accessories3={mobile2}
-          accessories4={mobile3}
-          pColor={"orange"}
-          bgColor={"linear-gradient(45deg, #93a5cf 0%, #e4efe9 100%)"}
-          offer={"39%"}
-          navlink={"accessories"}
-        />
-        <CardHeroComp
-          accessories1={watch}
-          accessories2={watch1}
-          accessories3={watch2}
-          accessories4={watch3}
-          pColor={"yellow"}
-          bgColor={"linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%)"}
-          offer={"49%"}
-          navlink={"accessories"}
-        />
-        <CardHeroComp
-          accessories1={laptops}
-          accessories2={laptops1}
-          accessories3={laptops2}
-          accessories4={laptops3}
-          pColor={"pink"}
-          bgColor={
-            "linear-gradient(to top, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%)"
-          }
-          offer={"29%"}
-          navlink={"accessories"}
-        />
-        <CardHeroComp
-          accessories1={jeans}
-          accessories2={jeans1}
-          accessories3={jeans2}
-          accessories4={jeans3}
-          pColor={"orange"}
-          bgColor={"linear-gradient(45deg, #ee9ca7 0%, #ffdde1 100%)"}
-          offer={"11%"}
-          navlink={"fashion"}
-        />
-        <CardHeroComp
-          accessories1={boots}
-          accessories2={boots1}
-          accessories3={boots2}
-          accessories4={boots3}
-          pColor={"yellow"}
-          bgColor={
-            "linear-gradient(-225deg, #5271C4 0%, #B19FFF 48%, #ECA1FE 100%)"
-          }
-          offer={"19%"}
-          navlink={"fashion"}
-        />
-        <CardHeroComp
-          accessories1={tshirt}
-          accessories2={tshirt1}
-          accessories3={tshirt2}
-          accessories4={tshirt3}
-          pColor={"pink"}
-          bgColor={"linear-gradient(-225deg, #FFFEFF 0%, #D7FFFE 100%)"}
-          offer={"15%"}
-          navlink={"fashion"}
-        />
-      </section>
+      {/* Trending Products */}
+      <div className="container-fluid mt-2">
+        <h2>Trending Products</h2>
+        <div className="row my-4 r-gap-30">
+          {TrendingProduct.map((product) => {
+            return (
+              <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-6">
+                <NavLink
+                  to={`/singleproduct/${product.id}`}
+                  className="text-dark"
+                  state={product}
+                >
+                  <div className="d-flex align-items-center gap-10 shadow rounded py-sm-3 py-1 px-sm-2 image-scale home-trending-card">
+                    <div style={{width:"30%"}} className="home-product-card-box">
+                      <img
+                        src={product.img}
+                        alt="image"
+                        className="home-product-card"
+                        style={{ height: "80px" }}
+                      />
+                    </div>
+                    <div className="py-2 p-0 home-product-card-box-info" style={{width:"70%"}}>
+                      <div className="d-flex">
+                        <p className="card-title font-weight-bold m-0 home-card-image-text overflow-text">
+                          {product.brand}
+                        </p>
+                        <p className="m-0 pl-4 home-card-image-text overflow-text">
+                          ₹ {product.price}
+                        </p>
+                      </div>
+                      <div>
+                        <p className=" m-0 home-card-image-text overflow-text">{product.model}</p>
+                      </div>
+                      <div className="home-card-star">
+                        <i className="fa-solid fa-star m-0 text-warning"></i>
+                        <i className="fa-solid fa-star m-0 text-warning"></i>
+                        <i className="fa-solid fa-star m-0 text-warning"></i>
+                        <i className="fa-solid fa-star m-0 text-warning"></i>
+                        <i className="fa-solid fa-star m-0 text-warning"></i>
+                      </div>
+                    </div>
+                  </div>
+                </NavLink>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      {/* Trending Products */}
 
-      <section className="small-banner">
-        <p> Repair Services</p>
-        <h1>
-          Up to <span>70% off</span> All t-Shirts & Accessories
-        </h1>
-        <button>Explore More</button>
-      </section>
+      {/* Gadget Sale */}
+      <div className="container-fluid my-5">
+        <h2 className="pl-5">Gadget Sale</h2>
+        <div className="row r-gap-30">
+          {productList
+            .filter((p) => p.type == "bluetooth , airdopes")
+            .map((prod) => {
+              return (
+                <div className="col-md-3 col-sm-4 col-6 px-lg-3 px-md-2 px-sm-1">
+                  <NavLink
+                    to={`/singleproduct/${prod.id}`}
+                    className="text-dark"
+                    state={prod}
+                  >
+                    <div className="p-2 h-100 w-100 rounded d-flex flex-column justify-content-center align-items-center sp-bg-color">
+                      <div
+                        className="img"
+                        style={{ height: "70%", width: "70%" }}
+                      >
+                        <img
+                          src={prod.img}
+                          alt=""
+                          style={{ height: "100%", width: "100%" }}
+                          className="rounded"
+                        />
+                      </div>
+                      <div
+                        className="offer d-flex justify-content-center align-items-center"
+                        style={{ height: "30%", width: "100%" }}
+                      >
+                        <p className="text-overflow">20% Discount</p>
+                      </div>
+                    </div>
+                  </NavLink>
+                </div>
+              );
+            })}
+        </div>
+      </div>
+      {/* Gadget Sale */}
 
-      <section className="product-scroller">
-        <ProductScroller />
-      </section>
-      <section className="watch-scroller">
-        <WatchScroller />
-      </section>
+      {/* Fashion Sale */}
+      <div className="container-fluid my-5">
+        <h2 className="pl-5">Fashion Sale</h2>
+        <div className="row r-gap-30">
+          {productList
+            .filter((p) => p.type == "Tshirts")
+            .map((prod) => {
+              return (
+                <div className="col-md-3 col-sm-4 col-6 px-lg-3 px-md-2 px-sm-1">
+                  <NavLink
+                    to={`/singleproduct/${prod.id}`}
+                    className="text-dark"
+                    state={prod}
+                  >
+                    <div className="col p-2 h-100 w-100 rounded d-flex flex-column justify-content-center align-items-center fs-bg-color">
+                      <div
+                        className="img"
+                        style={{ height: "70%", width: "70%" }}
+                      >
+                        <img
+                          src={prod.img}
+                          alt=""
+                          style={{ height: "100%", width: "100%" }}
+                          className="rounded"
+                        />
+                      </div>
+                      <div
+                        className="offer d-flex justify-content-center align-items-center"
+                        style={{ height: "30%", width: "100%" }}
+                      >
+                        <p>20% Discount</p>
+                      </div>
+                    </div>
+                  </NavLink>
+                </div>
+              );
+            })}
+        </div>
+      </div>
+      {/* Fashion Sale */}
     </>
   );
 };

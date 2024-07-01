@@ -9,8 +9,12 @@ import Fashion from "./component/Fashion";
 import Contact from "./component/Contact";
 import About from "./component/About";
 import SingleProduct from "./component/SingleProduct";
+import "./component/global.css";
+import Signup from "./component/auth/Signup";
+import Login from "./component/auth/Login";
 
 const App = () => {
+  
   const [product, setProduct] = useState([]);
   const [inputs, setInputs] = useState("");
   const [location, setLocation] = useState();
@@ -31,6 +35,7 @@ const App = () => {
                 product={product}
                 setProduct={setProduct}
                 inputs={inputs}
+                setInputs={setInputs}
                 location={location}
                 setLocation={setLocation}
               />
@@ -43,6 +48,7 @@ const App = () => {
                 product={product}
                 setProduct={setProduct}
                 inputs={inputs}
+                setInputs={setInputs}
                 location={location}
                 setLocation={setLocation}
               />
@@ -56,8 +62,12 @@ const App = () => {
           ></Route>
           <Route
             path={`${location}/singleproduct/:name`}
-            element={<SingleProduct />}
+            element={
+              <SingleProduct product={product} setProduct={setProduct} />
+            }
           ></Route>
+          <Route path="/signup" element={<Signup />}></Route>
+          <Route path="/login" element={<Login />}></Route>
         </Routes>
         <Footer />
       </BrowserRouter>

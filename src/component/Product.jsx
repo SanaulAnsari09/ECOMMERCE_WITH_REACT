@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
-import "./Product.css";
 import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+
 
 const Product = ({
   product,
@@ -12,15 +12,17 @@ const Product = ({
   location,
   setLocation,
 }) => {
+
   let [objects, setObjects] = useState(apiData);
 
   const navigate = useNavigate();
 
-  const addToCart = ({ ...value }) => {
+  const addToCart = ({ ...value }) => { 
     setProduct([...product, { ...value }]);
 
     toast.success("Product Added", {
-      position: toast.POSITION.TOP_CENTER,
+      position: toast.POSITION.BOTTOM_LEFT,
+  
     });
   };
 
@@ -63,7 +65,7 @@ const Product = ({
               <div className="product" key={value.id}>
                 <NavLink to={`singleproduct/${value.id}`} state={value}>
                   <div className="cardImg">
-                    <img src={value.img} alt="mobile" />
+                    <img src={value.img} alt="mobile"/>
                   </div>
                 </NavLink>
                 <div className="cardDetail">
@@ -78,7 +80,7 @@ const Product = ({
                     <button onClick={() => addToCart({ ...value })}>
                       AddToCart
                     </button>
-                    <ToastContainer autoClose={700} />
+                    <ToastContainer autoClose={700}/>
                     <button>Buy Now</button>
                   </div>
                 </div>

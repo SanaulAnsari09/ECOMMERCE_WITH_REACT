@@ -1,7 +1,9 @@
 import React from "react";
 import "./Cart.css";
 import CartItem from "./CartItem";
+
 const Cart = ({ product = "", setProduct }) => {
+  
   return (
     <>
       <div className="mainContainer">

@@ -40,15 +40,15 @@ const About = () => {
             {/* <p>Features</p> */}
             <div className="icons">
               <div>
-                <i class="fa-solid fa-truck"></i>
+                <i className="fa-solid fa-truck"></i>
                 <span>Fast Delivery</span>
               </div>
               <div>
-                <i class="fa-solid fa-arrow-rotate-left"></i>
+                <i className="fa-solid fa-arrow-rotate-left"></i>
                 <span>Return Policy</span>
               </div>
               <div>
-                <i class="fa-solid fa-handshake"></i>
+                <i className="fa-solid fa-handshake"></i>
                 <span>Good Relation</span>
               </div>
             </div>

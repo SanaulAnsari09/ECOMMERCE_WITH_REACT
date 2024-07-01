@@ -9,15 +9,12 @@ const Footer = () => {
           <img className="logo" src="clickShop.png" alt="image" />
           <h4>Contact</h4>
           <p>
-            <strong>Address:</strong>Noida Sector 57
+            <strong>Address : </strong> Noida Sector 57
           </p>
           <p>
-            <strong>Phone</strong>8252232266 / 8809451434
+            <strong>Phone : </strong> 8809451434
           </p>
-          <p>
-            <strong>Hours</strong>Noida Sector 57
-          </p>
-          <div class="follow">
+          <div className="follow">
             <h4>Follow Us</h4>
             <div className="icon">
               <i className="fab fa-facebook-f"></i>
@@ -49,7 +46,7 @@ const Footer = () => {
         <div className="col install">
           <h4>Install App</h4>
           <p>From App Store Or Google Play</p>
-          <div class="row">
+          <div className="row">
             <img src="app.jpg" alt="image" />
             <img src="play.jpg" alt="image" />
           </div>

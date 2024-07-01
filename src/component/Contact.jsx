@@ -22,7 +22,7 @@ const Contact = () => {
           <h3>Head Office</h3>
           <div>
             <li>
-              <i class="fa-solid fa-location-dot"></i>
+              <i className="fa-solid fa-location-dot"></i>
               <p>56 Glassford Street Glasgow G1 1UL New Yourk</p>
             </li>
             <li>
@@ -30,17 +30,17 @@ const Contact = () => {
               <p>contact@example.com</p>
             </li>
             <li>
-              <i class="fa-solid fa-phone"></i>
+              <i className="fa-solid fa-phone"></i>
               <p>091-8809451434</p>
             </li>
             <li>
-              <i class="fa-solid fa-clock"></i>
+              <i className="fa-solid fa-clock"></i>
               <p>Monday to Saturday: 9:00 AM to 16 PM</p>
             </li>
           </div>
         </div>
 
-        <div class="map">
+        <div className="map">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d224357.50125142033!2d77.23700863253411!3d28.52210234415207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce5a43173357b%3A0x37ffce30c87cc03f!2sNoida%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1693550650591!5m2!1sen!2sin"
             width="600"

@@ -7,47 +7,41 @@
 .singleContainer {
   height: auto;
   width: 100%;
-  padding: 50px 100px 50px 100px;
+  padding: 10px 10px 20px 10px;
   display: flex;
   justify-content: space-between;
-  background-image: linear-gradient(
-    to top,
-    #f3e7e9 0%,
-    #e3eeff 99%,
-    #e3eeff 100%
-  );
 }
 .singleContainer .imageArea {
   width: 35%;
-  height: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .singleContainer .imageArea img {
-  height: 100%;
-  width: 100%;
+  height: 20rem;
+  width: 20rem;
   border-radius: 12px;
 }
 .singleContainer .infoArea {
   height: 100%;
-  width: 55%;
+  width: 60%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
 }
-
 .singleContainer .infoArea .heading {
   display: flex;
-  justify-content: space-between;
+  gap: 20px;
   align-items: center;
 }
 .singleContainer .infoArea .heading .star {
   display: flex;
-  gap: 5px;
   font-size: 25px;
-  color: rgb(241, 219, 93);
+  color: rgb(255, 165, 29);
 }
 .singleContainer .infoArea .price {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
 }
 .singleContainer .infoArea .price .offer {
@@ -56,12 +50,12 @@
 }
 
 .singleContainer .infoArea .offers h4 {
-  padding: 20px 0;
+  padding: 5px 0;
 }
 .singleContainer .infoArea .offers .para {
   display: flex;
+  gap: 4px;
   flex-direction: column;
-  gap: 10px;
 }
 .singleContainer .infoArea .offers .para p i {
   padding-right: 10px;
@@ -83,7 +77,6 @@
 .singleContainer .infoArea .highlight .details {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   font-size: 14px;
 }
 .singleContainer .infoArea .highlight .details ul {
@@ -96,51 +89,33 @@
   font-style: inherit;
 }
 .singleContainer .infoArea .Single-buttons {
-  width: 100%;
+  width:50%;
   display: flex;
   justify-content: space-between;
-  padding-top: 30px;
 }
 .singleContainer .infoArea .Single-buttons button {
-  width: 40%;
+  width: 10rem;
   box-shadow: none;
   border-radius: 20px;
   background-color: orange;
+  border: none;
+  height: 40px;
+  outline: none;
+  transition: 0.5s;
+  font-weight: bold;
+  margin-top: 10px;
 }
-.singleContainer .infoArea .features {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  padding: 20px 0;
-  border-top: 1px solid rgb(113, 130, 130);
-  border-bottom: 1px solid rgb(113, 130, 130);
-  margin-top: 30px;
-}
-.singleContainer .infoArea .features div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-}
-
-.singleContainer .infoArea .features div i {
-  height: 50px;
-  width: 50px;
-  background-color: #7ca3de;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  color: white;
-  font-size: 20px;
-}
-.singleContainer .infoArea .features div span {
-  font-size: 14px;
+.singleContainer .infoArea .Single-buttons button:hover{
+  background-color: rgb(255, 253, 250);
+  color: orange;
 }
 
 @media screen and (max-width: 1144px) {
   .singleContainer {
     padding: 50px 50px;
+  }
+  .singleContainer .infoArea .Single-buttons{
+    width: 60%;
   }
 }
 
@@ -156,6 +131,7 @@
   }
 }
 
+
 @media screen and (max-width: 1044px) {
   .singleContainer .infoArea .offers .para p {
     font-size: 10px;
@@ -167,6 +143,13 @@
   }
   .singleContainer .infoArea .features div span {
     font-size: 10px;
+  }
+  .singleContainer .imageArea img{
+    height: 18rem;
+    width: 18rem;
+  }
+  .singleContainer .infoArea .Single-buttons{
+    width: 70%;
   }
 }
 
@@ -218,6 +201,14 @@
   .singleContainer .infoArea .offers .para p {
     font-size: 14px;
   }
+  .singleContainer .infoArea .Single-buttons{
+    width: 100%;
+    justify-content:start;
+    gap: 30px;
+  }
+  .singleContainer .infoArea .Single-buttons button{
+    width: 8rem;
+  }
 }
 @media screen and (max-width: 537px) {
   .singleContainer .infoArea .offers .para p {
@@ -239,5 +230,14 @@
   }
   .singleContainer .infoArea .offers .para p {
     font-size: 10px;
+  }
+  .singleContainer .infoArea .Single-buttons button{
+    width: 6rem;
+  }
+  .singleContainer .imageArea{
+    width: 90%;
+  }
+  .singleContainer .imageArea img{
+    margin-left: 20px;
   }
 }
